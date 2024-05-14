@@ -1,0 +1,381 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.headerContainer {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures header is on top of other content */
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Change color on hover */
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+#hero {
+    position: relative;
+    overflow: hidden;
+    height: 50vh; /* Set the height of the hero section to 50% of the viewport height */
+}
+
+.heroContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    width: 100%; /* Set the width of the hero content container to 100% */
+}
+
+h2 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffd700;
+}
+
+.video-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.video-carousel video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.video-carousel video.active {
+    opacity: 1;
+}
+
+/* for models */
+#models {
+    padding: 100px 0;
+}
+
+.model {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.model img {
+    width: 100%;
+    max-width: 300px; /* Adjust the max-width as needed */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    transition: transform 0.3s ease;
+}
+
+.model img:hover {
+    transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.model h3 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.model p {
+    color: #666;
+    margin-top: 10px;
+}
+
+.modelsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 768px) {
+    .modelsContainer {
+        gap: 30px; /* Add space between models */
+    }
+
+    .model {
+        flex: 0 0 calc(33.333% - 30px); /* Adjust the width of each model */
+    }
+}
+
+/* for features */
+#features {
+    background-color: #f9f9f9; /* Background color for the features section */
+    padding: 100px 0;
+}
+
+.featuresContainer {
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+    margin-right: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    position: relative; /* Position for the checkmark icon */
+}
+
+ul li::before {
+    content: '\2713'; /* Checkmark icon */
+    font-size: 20px;
+    color: #333;
+    position: absolute;
+    left: -30px; /* Adjust the position of the checkmark */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.featuresContainer ul {
+    display: inline-block;
+    text-align: left;
+}
+/* for gallery
+ */
+ #gallery {
+    padding: 100px 0;
+}
+
+.galleryContainer {
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    gap: 20px; /* Add space between images */
+}
+
+.gallery-images img {
+    width: 100%;
+    max-width: 100%; /* Ensure images don't exceed their container */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    transition: transform 0.3s ease;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
+}
+
+
+/* for testimonial */
+#testimonials {
+    padding: 100px 0;
+}
+
+.testimonialsContainer {
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.testimonial-carousel {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden; /* Hide overflowing content */
+}
+
+.testimonial {
+    max-width: 400px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 0 10px; /* Adjust spacing between testimonials */
+    transition: transform 0.3s ease;
+}
+
+.testimonial p {
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.testimonial-author cite {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* for contact */
+
+#contact {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+}
+
+.contactContainer {
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.contact-form {
+    max-width: 400px;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ffd700;
+}
+
+.contact-map {
+    flex: 1;
+    height: 300px;
+    margin-left: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+/* for footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
